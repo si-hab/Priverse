@@ -14,7 +14,7 @@ A modern mobile-first student portal for **Independent University, Bangladesh**
    cd "Iras Project/IrasRedesign"
    python3 server.py
    ```
-
+2.https://priverse.onrender.com
     
   
 
