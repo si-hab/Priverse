@@ -1,9 +1,9 @@
 # Priverse — IUB Student Portal
 
-A modern mobile-first student portal for **Independent University, Bangladesh** with **zero dummy
-data** and **zero browser extensions required**.
+A modern mobile-first student portal for **Independent University, Bangladesh**
 
-Pure **HTML + CSS + vanilla JS + single unified server**.
+
+
 
 ---
 
@@ -15,18 +15,8 @@ Pure **HTML + CSS + vanilla JS + single unified server**.
    python3 server.py
    ```
 
-2. Open the URL:
-   - **On your Mobile Phone (iPhone / Android)**:
-     Connect to the same Wi-Fi and open:
-     ```text
-     http://192.168.0.100:8080
-     ```
-     *(Optional: In Safari or Chrome on your phone, tap **Share -> Add to Home Screen** to install it as a fullscreen mobile app without an address bar!)*
-
-   - **On your Mac / Computer**:
-     ```text
-     http://localhost:8080
-     ```
+    
+  
 
 3. Sign in with your university ID and password.
 
