@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<title>Priverse — Independent University, Bangladesh</title>
+<meta name="description" content="Priverse student portal for Independent University, Bangladesh.">
+<meta name="theme-color" content="#121214">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Priverse">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.png?v=2">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+
+<!-- ============ LOGIN ============ -->
+<div id="login-screen" class="login-screen">
+  <div class="login-bg"></div>
+  <div class="login-wrap">
+    <div class="login-brand">
+      <div class="login-logo">
+        <img src="priverse-mark.svg" width="52" height="52" alt="">
+      </div>
+      <h1>Priverse</h1>
+      <p class="login-sub">Student Portal</p>
+    </div>
+    <form id="login-form" class="card login-card" autocomplete="off">
+      <div class="live-note">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+        </svg>
+        <span>Secure connection to the university student services.</span>
+      </div>
+      <label class="field">
+        <span>University ID</span>
+        <input id="login-id" type="text" placeholder="Your University ID" autocomplete="username" inputmode="numeric" autocapitalize="off" autocorrect="off" spellcheck="false">
+      </label>
+      <label class="field">
+        <span>Password</span>
+        <div class="pw-wrap">
+          <input id="login-pw" type="password" placeholder="••••••••" autocomplete="current-password" autocapitalize="off" autocorrect="off" spellcheck="false">
+          <button type="button" id="pw-toggle" aria-label="Show password">👁</button>
+        </div>
+      </label>
+      <p id="login-error" class="form-error" hidden></p>
+      <button type="submit" id="login-btn" class="btn-primary btn-lg">Sign In</button>
+      <div class="login-links">
+        <a href="#" onclick="return false">Need help?</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="app" class="app" hidden>
+  <aside class="sidebar">
+    <div class="side-brand">
+      <div class="side-brand-icon">
+        <img src="priverse-mark.svg" width="24" height="24" alt="">
+      </div>
+      <div class="side-brand-text">
+        <div class="side-brand-title">Priverse</div>
+        <div class="side-brand-sub">IUB Portal</div>
+      </div>
+    </div>
+    <nav class="side-nav" id="side-nav">
+      <button data-tab="home" class="active">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 10.5L12 3l9 7.5V20a1.5 1.5 0 0 1-1.5 1.5H4.5A1.5 1.5 0 0 1 3 20v-9.5z"/>
+          <path d="M9 21v-7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v7"/>
+        </svg>
+        <span>Home</span>
+      </button>
+      <button data-tab="attendance">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 11l3 3L22 4"/>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+        <span>Attendance</span>
+      </button>
+      <button data-tab="history">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          <line x1="8" y1="6" x2="16" y2="6"/>
+          <line x1="8" y1="10" x2="14" y2="10"/>
+        </svg>
+        <span>Academic History</span>
+      </button>
+      <button data-tab="schedule">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="3" ry="3"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <circle cx="8" cy="15" r="1.2" fill="currentColor"/>
+          <circle cx="12" cy="15" r="1.2" fill="currentColor"/>
+          <circle cx="16" cy="15" r="1.2" fill="currentColor"/>
+        </svg>
+        <span>Schedule</span>
+      </button>
+      <button data-tab="profile">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        <span>Profile</span>
+      </button>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar-title" id="topbar-title">Student Portal</div>
+      <div class="topbar-right">
+        <div class="avatar sm" id="top-avatar" onclick="go('profile')" style="cursor:pointer">•</div>
+      </div>
+    </header>
+    <main id="content" class="content"></main>
+  </div>
+
+  <nav class="bottom-nav" id="bottom-nav">
+    <button data-tab="home" class="active">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 10.5L12 3l9 7.5V20a1.5 1.5 0 0 1-1.5 1.5H4.5A1.5 1.5 0 0 1 3 20v-9.5z"/>
+        <path d="M9 21v-7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v7"/>
+      </svg>
+      <span>Home</span>
+    </button>
+    <button data-tab="attendance">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 11l3 3L22 4"/>
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+      </svg>
+      <span>Attendance</span>
+    </button>
+    <button data-tab="history">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+        <line x1="8" y1="6" x2="16" y2="6"/>
+        <line x1="8" y1="10" x2="14" y2="10"/>
+      </svg>
+      <span>Academic History</span>
+    </button>
+    <button data-tab="schedule">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="3" ry="3"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+        <circle cx="8" cy="15" r="1.2" fill="currentColor"/>
+        <circle cx="12" cy="15" r="1.2" fill="currentColor"/>
+        <circle cx="16" cy="15" r="1.2" fill="currentColor"/>
+      </svg>
+      <span>Schedule</span>
+    </button>
+    <button data-tab="profile">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+      <span>Profile</span>
+    </button>
+  </nav>
+</div>
+
+<!-- confirm modal + toast -->
+<div id="modal-backdrop" class="modal-backdrop" hidden>
+  <div class="card modal">
+    <h3 id="modal-title">Confirm registration</h3>
+    <div id="modal-body"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" id="modal-cancel">Cancel</button>
+      <button class="btn-primary" id="modal-ok">Confirm</button>
+    </div>
+  </div>
+</div>
+<div id="toast" class="toast" hidden></div>
+
+<script src="app.js"></script>
+</body>
+</html>

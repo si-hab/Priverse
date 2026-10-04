@@ -1,0 +1,22 @@
+{
+  "name": "Priverse — IUB Student Portal",
+  "short_name": "Priverse",
+  "description": "Student portal for Independent University, Bangladesh",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0a214d",
+  "theme_color": "#0a214d",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

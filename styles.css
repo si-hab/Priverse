@@ -1,0 +1,1281 @@
+:root {
+  /* ================= Apple System Color Palette ================= */
+  --apple-bg: #121214;
+  --apple-canvas: #0c0c0e;
+  --apple-sidebar: #1c1c1e;
+  --apple-card: #1c1c1e;
+  --apple-card-elevated: #242426;
+  --apple-card-inset: #2c2c2e;
+  --apple-active-capsule: #38383a;
+  
+  --apple-blue: #0a84ff;
+  --apple-blue-hover: #0071e3;
+  --apple-blue-glow: rgba(10, 132, 255, 0.35);
+  
+  --apple-green: #30d158;
+  --apple-green-glow: rgba(48, 209, 88, 0.25);
+  --apple-orange: #ff9f0a;
+  --apple-red: #ff453a;
+  --apple-purple: #bf5af2;
+  --apple-indigo: #5e5ce6;
+  
+  --apple-text: #ffffff;
+  --apple-text-secondary: rgba(235, 235, 245, 0.65);
+  --apple-text-tertiary: rgba(235, 235, 245, 0.38);
+  
+  --apple-hairline: rgba(255, 255, 255, 0.08);
+  --apple-hairline-bright: rgba(255, 255, 255, 0.15);
+  
+  --radius-card: 20px;
+  --radius-subcard: 16px;
+  --radius-btn: 12px;
+  --radius-pill: 9999px;
+  
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 8px 30px rgba(10, 132, 255, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif;
+  background: var(--apple-canvas);
+  color: var(--apple-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* ================= Common Utilities ================= */
+.card {
+  background: var(--apple-card);
+  border: 1px solid var(--apple-hairline);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 22px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  margin-bottom: 16px;
+  color: var(--apple-text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  stroke: var(--apple-blue);
+  color: var(--apple-blue);
+  flex-shrink: 0;
+}
+.meta-icon {
+  width: 15px;
+  height: 15px;
+  stroke: var(--apple-blue);
+  color: var(--apple-blue);
+  flex-shrink: 0;
+}
+
+.muted {
+  color: var(--apple-text-secondary);
+  font-size: 13.5px;
+}
+
+/* ================= Apple Buttons ================= */
+.btn-primary {
+  background: var(--apple-blue);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-btn);
+  padding: 12px 22px;
+  font-weight: 600;
+  font-size: 14.5px;
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(10, 132, 255, 0.35);
+  transition: all 0.15s ease;
+}
+.btn-primary:hover {
+  background: var(--apple-blue-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(10, 132, 255, 0.45);
+}
+.btn-primary:active {
+  transform: scale(0.98);
+}
+.btn-primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn-lg {
+  width: 100%;
+  padding: 14px;
+  font-size: 15.5px;
+}
+
+.btn-ghost {
+  background: var(--apple-card-inset);
+  border: 1px solid var(--apple-hairline);
+  color: var(--apple-text);
+  border-radius: var(--radius-btn);
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 14.5px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn-ghost:hover {
+  background: #38383a;
+}
+.btn-ghost:active {
+  transform: scale(0.98);
+}
+
+.btn-danger {
+  width: 100%;
+  background: rgba(255, 69, 58, 0.12);
+  border: 1px solid rgba(255, 69, 58, 0.3);
+  color: var(--apple-red);
+  border-radius: var(--radius-btn);
+  padding: 14px;
+  font-weight: 600;
+  font-size: 14.5px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btn-danger:hover {
+  background: rgba(255, 69, 58, 0.22);
+  border-color: var(--apple-red);
+}
+.btn-danger:active {
+  transform: scale(0.98);
+}
+
+/* ================= Apple Status Chips ================= */
+.chip {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(10, 132, 255, 0.14);
+  color: var(--apple-blue);
+  border: 1px solid rgba(10, 132, 255, 0.28);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+.chip-green {
+  background: rgba(48, 209, 88, 0.14);
+  color: var(--apple-green);
+  border-color: rgba(48, 209, 88, 0.3);
+}
+.chip-live {
+  background: rgba(48, 209, 88, 0.14);
+  color: var(--apple-green);
+  border-color: rgba(48, 209, 88, 0.3);
+}
+.chip-amber {
+  background: rgba(255, 159, 10, 0.14);
+  color: var(--apple-orange);
+  border-color: rgba(255, 159, 10, 0.3);
+}
+.chip-red {
+  background: rgba(255, 69, 58, 0.14);
+  color: var(--apple-red);
+  border-color: rgba(255, 69, 58, 0.3);
+}
+
+/* ================= Pop-up Semester Switcher ================= */
+.sem-dropdown {
+  background: var(--apple-card-inset);
+  color: #ffffff;
+  border: 1px solid var(--apple-hairline-bright);
+  border-radius: 10px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+.sem-dropdown:hover, .sem-dropdown:focus {
+  border-color: var(--apple-blue);
+  box-shadow: 0 0 0 2.5px rgba(10, 132, 255, 0.3);
+}
+
+/* ================= Avatar ================= */
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--apple-blue), #0040dd);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+  flex-shrink: 0;
+  border: 1.5px solid var(--apple-hairline-bright);
+}
+.avatar.sm {
+  width: 34px;
+  height: 34px;
+  font-size: 13px;
+}
+
+/* ================= LOGIN SCREEN ================= */
+.login-screen {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--apple-canvas);
+}
+.login-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(10, 132, 255, 0.18), transparent 65%),
+              radial-gradient(circle at 10% 90%, rgba(48, 209, 88, 0.08), transparent 50%);
+}
+.login-wrap {
+  position: relative;
+  width: min(420px, 92vw);
+  padding: 40px 0;
+}
+.login-brand {
+  text-align: center;
+  color: var(--apple-text);
+  margin-bottom: 28px;
+}
+.login-logo {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 16px;
+  background: rgba(28, 28, 30, 0.85);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--apple-hairline-bright);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 20px rgba(10, 132, 255, 0.2);
+}
+.login-brand h1 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.login-sub {
+  color: var(--apple-text-secondary);
+  font-size: 14px;
+  margin-top: 6px;
+}
+.login-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--apple-sidebar);
+  border: 1px solid var(--apple-hairline-bright);
+  backdrop-filter: blur(30px);
+}
+.field span {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--apple-text-secondary);
+  margin-bottom: 6px;
+}
+.field input {
+  width: 100%;
+  border: 1px solid var(--apple-hairline-bright);
+  border-radius: 12px;
+  padding: 13px 16px;
+  font-size: 14.5px;
+  font-family: inherit;
+  outline: none;
+  background: var(--apple-card-inset);
+  color: var(--apple-text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.field input:focus {
+  border-color: var(--apple-blue);
+  box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.25);
+}
+.pw-wrap { position: relative; }
+.pw-wrap button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: none;
+  font-size: 17px;
+  cursor: pointer;
+  color: var(--apple-text-secondary);
+}
+.form-error {
+  color: var(--apple-red);
+  font-size: 13px;
+  font-weight: 500;
+  background: rgba(255, 69, 58, 0.1);
+  border: 1px solid rgba(255, 69, 58, 0.25);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+.login-links {
+  display: flex;
+  justify-content: flex-end;
+}
+.login-links a {
+  color: var(--apple-blue);
+  font-size: 12.5px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.live-note {
+  background: rgba(10, 132, 255, 0.1);
+  border: 1px solid rgba(10, 132, 255, 0.25);
+  border-radius: 12px;
+  padding: 11px 14px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #70b4ff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.live-note svg { flex-shrink: 0; stroke: var(--apple-blue); }
+.login-foot {
+  text-align: center;
+  color: var(--apple-text-tertiary);
+  font-size: 12px;
+  margin-top: 28px;
+}
+
+/* ================= APP SHELL ================= */
+.app {
+  display: flex;
+  min-height: 100vh;
+  background: var(--apple-canvas);
+}
+
+/* ---------- macOS App Store Sidebar (Matches media_1790555730280.png) ---------- */
+.sidebar {
+  width: 255px;
+  flex-shrink: 0;
+  background: var(--apple-sidebar);
+  border-right: 1px solid var(--apple-hairline);
+  color: var(--apple-text);
+  display: flex;
+  flex-direction: column;
+  padding: 22px 14px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  user-select: none;
+}
+.side-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 10px 24px;
+}
+.side-brand-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(10, 132, 255, 0.12);
+  border: 1px solid rgba(10, 132, 255, 0.28);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(10, 132, 255, 0.2);
+}
+.side-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+.side-brand-title {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  color: #ffffff;
+  line-height: 1.15;
+}
+.side-brand-sub {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--apple-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+/* Sidebar navigation buttons matching macOS App Store */
+.side-nav button {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+/* ALL sidebar icons use signature Apple Blue (#0a84ff) stroke */
+.side-nav button .nav-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--apple-blue);
+  stroke: var(--apple-blue);
+  flex-shrink: 0;
+  transition: transform 0.15s;
+}
+
+.side-nav button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.side-nav button:active {
+  transform: scale(0.98);
+}
+
+/* ACTIVE ITEM: Rounded grey capsule (#38383a) per user image */
+.side-nav button.active {
+  background: var(--apple-active-capsule);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.side-nav button.active .nav-icon {
+  color: var(--apple-blue);
+  stroke: var(--apple-blue);
+  filter: drop-shadow(0 0 6px rgba(10, 132, 255, 0.45));
+}
+
+/* ---------- Main Content Area ---------- */
+.main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: rgba(24, 24, 26, 0.82);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--apple-hairline);
+}
+.topbar-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--apple-text);
+}
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.content {
+  padding: 26px 32px 100px;
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.bottom-nav { display: none; }
+
+/* ================= NEXT CLASS FLASH CARD ================= */
+.flash-card {
+  background: var(--apple-card);
+  border: 1px solid var(--apple-hairline);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+.flash-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.flash-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+  background: rgba(10, 132, 255, 0.16);
+  color: #70b4ff;
+  border: 1px solid rgba(10, 132, 255, 0.3);
+}
+.flash-badge.live-now {
+  background: rgba(48, 209, 88, 0.18);
+  color: #6ee7b7;
+  border-color: rgba(48, 209, 88, 0.4);
+  animation: pulse-ring 2s infinite;
+}
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(48, 209, 88, 0); }
+}
+.room-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: var(--apple-green);
+  color: #000000;
+  box-shadow: 0 2px 10px rgba(48, 209, 88, 0.35);
+  letter-spacing: 0.3px;
+}
+.room-pill svg {
+  stroke: #000000;
+  flex-shrink: 0;
+}
+.flash-time {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+.flash-course-title {
+  font-size: 17.5px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+.flash-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 13.5px;
+  color: var(--apple-text-secondary);
+  flex-wrap: wrap;
+}
+.flash-empty {
+  text-align: center;
+  padding: 20px 10px;
+  color: var(--apple-text-secondary);
+}
+
+/* ================= 📚 RUNNING COURSES CARDS ================= */
+.hero {
+  background: linear-gradient(145deg, #1c1c1e 0%, #151517 100%);
+  border: 1px solid var(--apple-hairline);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--shadow-card);
+}
+.hero-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.hero h2 {
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  color: #ffffff;
+}
+.hero p {
+  color: var(--apple-text-secondary);
+  font-size: 13.5px;
+  font-weight: 500;
+}
+.live-photo {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--apple-blue);
+  box-shadow: 0 0 16px rgba(10, 132, 255, 0.35);
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 16px;
+}
+.course-card {
+  background: var(--apple-card-elevated);
+  border: 1px solid var(--apple-hairline);
+  border-radius: var(--radius-subcard);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.course-card:hover {
+  border-color: rgba(10, 132, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.course-tag {
+  font-size: 13px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: rgba(10, 132, 255, 0.12);
+  color: var(--apple-blue);
+  border: 1px solid rgba(10, 132, 255, 0.28);
+  letter-spacing: 0.3px;
+}
+.sec-tag {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--apple-text-secondary);
+}
+.course-title-text {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+}
+.course-meta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--apple-text-secondary);
+}
+.course-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.course-meta-item svg {
+  stroke: var(--apple-blue);
+  flex-shrink: 0;
+}
+.att-bar-wrap {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.att-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+.att-track {
+  width: 100%;
+  height: 6px;
+  background: var(--apple-card-inset);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+.att-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  transition: width 0.5s ease;
+}
+.att-fill.high { background: var(--apple-green); }
+.att-fill.med { background: var(--apple-orange); }
+.att-fill.low { background: var(--apple-red); }
+
+/* ================= 📊 ATTENDANCE TAB ================= */
+.att-hero {
+  background: linear-gradient(135deg, rgba(48, 209, 88, 0.14) 0%, rgba(28, 28, 30, 0.95) 100%);
+  border: 1px solid rgba(48, 209, 88, 0.28);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-card);
+}
+.att-stat-big {
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--apple-green);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -1px;
+}
+.att-card-item {
+  background: var(--apple-card-elevated);
+  border: 1px solid var(--apple-hairline);
+  border-radius: var(--radius-subcard);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.att-badge-safe {
+  background: rgba(48, 209, 88, 0.14);
+  color: var(--apple-green);
+  border: 1px solid rgba(48, 209, 88, 0.3);
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+  font-size: 11.5px;
+  font-weight: 700;
+}
+.att-badge-warn {
+  background: rgba(255, 159, 10, 0.14);
+  color: var(--apple-orange);
+  border: 1px solid rgba(255, 159, 10, 0.3);
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+  font-size: 11.5px;
+  font-weight: 700;
+}
+.att-badge-danger {
+  background: rgba(255, 69, 58, 0.14);
+  color: var(--apple-red);
+  border: 1px solid rgba(255, 69, 58, 0.3);
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+/* ================= ACADEMIC HISTORY TAB ================= */
+.history-hero {
+  background: var(--apple-card);
+  border: 1px solid var(--apple-hairline);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-card);
+}
+
+/* ================= STATS WIDGETS ================= */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.stat-card {
+  background: var(--apple-card);
+  border: 1px solid var(--apple-hairline);
+  border-radius: var(--radius-subcard);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.stat-card:hover {
+  border-color: rgba(10, 132, 255, 0.35);
+  transform: translateY(-2px);
+}
+.stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--apple-text-secondary);
+}
+.stat-value {
+  font-size: 36px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.stat-value.highlight-blue {
+  color: var(--apple-blue);
+}
+.stat-value.highlight-green {
+  color: var(--apple-green);
+}
+.stat-unit {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--apple-text-secondary);
+  margin-left: 2px;
+}
+.stat-sub {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--apple-text-tertiary);
+}
+
+/* Clickable privacy toggle for Stat Cards */
+.clickable-stat {
+  cursor: pointer;
+  user-select: none;
+}
+.clickable-stat:hover {
+  background: #202024;
+  border-color: rgba(10, 132, 255, 0.45);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+.clickable-stat:active {
+  transform: scale(0.985);
+}
+.stat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.stat-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--apple-text-tertiary);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+.clickable-stat:hover .stat-toggle-icon {
+  color: var(--apple-blue);
+  transform: scale(1.08);
+}
+.stat-eye-ico {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+}
+.stat-hidden-dots {
+  letter-spacing: 4px;
+  font-size: 28px;
+  color: var(--apple-text-tertiary);
+  font-weight: 800;
+  vertical-align: middle;
+}
+
+/* Hero Stat Pills */
+.hero-stats {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+.hero-stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--apple-card-inset);
+  border: 1px solid var(--apple-hairline);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+}
+.clickable-pill {
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+}
+.clickable-pill:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(10, 132, 255, 0.4);
+}
+.clickable-pill:active {
+  transform: scale(0.96);
+}
+.pill-eye-icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--apple-text-tertiary);
+  margin-left: 2px;
+  transition: color 0.15s ease;
+}
+.clickable-pill:hover .pill-eye-icon {
+  color: var(--apple-blue);
+}
+.pill-hidden-dots {
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  color: var(--apple-text-tertiary);
+}
+.hero-stat-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--apple-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.hero-stat-val {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+}
+.semester-block {
+  background: var(--apple-card);
+  border: 1px solid var(--apple-hairline);
+  border-radius: var(--radius-card);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.semester-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--apple-hairline);
+}
+.semester-block-title {
+  font-size: 17.5px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+}
+.semester-block-meta {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--apple-text-secondary);
+}
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--apple-hairline);
+}
+.history-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.grade-pill {
+  min-width: 44px;
+  text-align: center;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 13px;
+}
+.grade-a {
+  background: rgba(48, 209, 88, 0.14);
+  color: var(--apple-green);
+  border: 1px solid rgba(48, 209, 88, 0.3);
+}
+.grade-b {
+  background: rgba(10, 132, 255, 0.14);
+  color: #70b4ff;
+  border: 1px solid rgba(10, 132, 255, 0.3);
+}
+.grade-c {
+  background: rgba(255, 159, 10, 0.14);
+  color: var(--apple-orange);
+  border: 1px solid rgba(255, 159, 10, 0.3);
+}
+.grade-f {
+  background: rgba(255, 69, 58, 0.14);
+  color: var(--apple-red);
+  border: 1px solid rgba(255, 69, 58, 0.3);
+}
+.grade-ip {
+  background: rgba(10, 132, 255, 0.14);
+  color: var(--apple-blue);
+  border: 1px solid rgba(10, 132, 255, 0.3);
+}
+
+/* ================= 🗓 SCHEDULE TAB ================= */
+.day-selector {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+}
+.day-btn {
+  padding: 9px 18px;
+  border-radius: 12px;
+  background: var(--apple-card-inset);
+  border: 1px solid var(--apple-hairline);
+  color: var(--apple-text-secondary);
+  font-weight: 600;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+.day-btn.active {
+  background: var(--apple-blue);
+  color: #ffffff;
+  border-color: var(--apple-blue);
+  box-shadow: 0 4px 14px rgba(10, 132, 255, 0.4);
+}
+.timeline-card {
+  background: var(--apple-card-elevated);
+  border: 1px solid var(--apple-hairline);
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* ================= STUDENT PROFILE ================= */
+.student-id-card {
+  background: var(--apple-card);
+  border: 1px solid var(--apple-hairline);
+  border-radius: 24px;
+  padding: 40px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+.student-photo-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+.student-photo-lg {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--apple-blue);
+  box-shadow: 0 0 25px rgba(10, 132, 255, 0.45);
+}
+.student-avatar-lg {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--apple-blue), #0040dd);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 800;
+  border: 3px solid var(--apple-blue);
+  box-shadow: 0 0 25px rgba(10, 132, 255, 0.45);
+}
+.student-name-lg {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+.student-id-badge {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #70b4ff;
+  background: rgba(10, 132, 255, 0.14);
+  border: 1px solid rgba(10, 132, 255, 0.3);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+}
+.student-program {
+  font-size: 14px;
+  color: var(--apple-text-secondary);
+  line-height: 1.45;
+  margin-bottom: 28px;
+  max-width: 360px;
+}
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+/* ================= SKELETON & SPINNER ================= */
+.skel {
+  height: 48px;
+  border-radius: 12px;
+  margin: 8px 0;
+  background: linear-gradient(90deg, #1c1c1e 25%, #2c2c2e 50%, #1c1c1e 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ================= TOAST ================= */
+.toast {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(44, 44, 46, 0.95);
+  backdrop-filter: blur(20px);
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  z-index: 60;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--apple-hairline-bright);
+  animation: toast-in .25s ease;
+}
+@keyframes toast-in {
+  from { opacity: 0; transform: translate(-50%, 12px); }
+}
+
+[hidden] { display: none !important; }
+
+/* ================= 📱 MOBILE WEB APP (< 860px) ================= */
+@media (max-width: 860px) {
+  .sidebar {
+    display: none;
+  }
+  .topbar {
+    padding: calc(14px + env(safe-area-inset-top)) 18px 14px;
+    background: rgba(24, 24, 26, 0.85);
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+  }
+  .content {
+    padding: 16px 16px calc(95px + env(safe-area-inset-bottom));
+    gap: 16px;
+  }
+  
+  /* Authentic iOS TabBar */
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: rgba(28, 28, 30, 0.88);
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    border-top: 0.5px solid rgba(255, 255, 255, 0.16);
+    padding: 6px 4px calc(12px + env(safe-area-inset-bottom));
+    justify-content: space-around;
+  }
+  .bottom-nav button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    background: transparent;
+    border: none;
+    color: #8e8e93;
+    font-size: 10px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: 8px;
+    transition: all 0.15s ease;
+  }
+  .bottom-nav button .nav-icon {
+    width: 22px;
+    height: 22px;
+    stroke: #8e8e93;
+    transition: all 0.15s ease;
+  }
+  .bottom-nav button.active {
+    color: var(--apple-blue);
+    font-weight: 600;
+  }
+  .bottom-nav button.active .nav-icon {
+    stroke: var(--apple-blue);
+    transform: translateY(-1px);
+    filter: drop-shadow(0 2px 6px rgba(10, 132, 255, 0.45));
+  }
+  .bottom-nav button:active {
+    transform: scale(0.92);
+  }
+  
+  .flash-card { padding: 20px; border-radius: 20px; }
+  .flash-time { font-size: 24px; }
+  .course-grid { grid-template-columns: 1fr; }
+  .att-hero { padding: 20px; }
+  .student-id-card { padding: 32px 18px; }
+}
