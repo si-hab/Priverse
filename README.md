@@ -3,15 +3,15 @@
 A modern mobile-first student portal for **Independent University, Bangladesh**
 
 
-##To use this: https://priverse.onrender.com
+1.To use this: https://priverse.onrender.com
     
   
 
-3. Sign in with your university ID and password.
+2.Sign in with your university ID and password.
 
 ---
 
-## 🚀 Deploy on Render
+## Deploy on Render
 
 Use **Render Web Service** for this project because it can run the Python
 server and serve the frontend from one service.
@@ -30,7 +30,7 @@ after inactivity, so the first visit may take a little time to load.
 
 ---
 
-## ✨ Features
+## Features
 
 - **No browser extensions required** — works on iOS Safari, Android Chrome, Mac, Windows, and Linux.
 - **Mobile PWA ready** with bottom navigation bar, safe-area notches, and standalone mode.
