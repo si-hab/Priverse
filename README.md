@@ -3,18 +3,7 @@
 A modern mobile-first student portal for **Independent University, Bangladesh**
 
 
-
-
----
-
-## 📱 Run Locally
-
-1. Run the unified server:
-   ```bash
-   cd "Iras Project/IrasRedesign"
-   python3 server.py
-   ```
-2.https://priverse.onrender.com
+##To use this: https://priverse.onrender.com
     
   
 
